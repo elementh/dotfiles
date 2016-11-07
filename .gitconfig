@@ -1,0 +1,12 @@
+[user]
+	name = Lucas Maximiliano Marino
+	email = elementh.github@icloud.com
+
+#[color]
+ui = true
+
+#[github]
+#	user = elementh
+
+[help]
+	autocorrect = 10
