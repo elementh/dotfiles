@@ -51,6 +51,20 @@ alias github="cd ~/Documents/GitHub"
 alias home="cd ~/"
 alias dotupdate="cp ~/.zshrc ~/Documents/GitHub/dotfiles && cp ~/.gitconfig ~/Documents/GitHub/dotfiles"
 
+alias cassiopeia="ssh cassiopeia -L 5901:localhost:5901"
+
+alias installPowerlineFonts="cd ~/ &&
+	git clone https://github.com/powerline/fonts.git powerlinefonts &&
+	cd powerlinefonts &&
+	./install.sh &&
+	cd .. &&
+	rm -rf powerlinefonts"
+
+alias installPacaur="curl -O https://gist.githubusercontent.com/elementh/7433598ea71be6f4fdd7b2bac4b5c33b/raw/651393f258c41638fad4425473283e1d4e937ba4/install-pacaur.sh &&
+	chmod +x install-pacaur.sh &&
+	./install-pacaur.sh &&
+	rm install-pacaur.sh"
+
 export TERM="xterm-256color"
 
 
