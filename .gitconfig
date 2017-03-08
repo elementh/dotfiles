@@ -1,12 +1,10 @@
 [user]
 	name = Lucas Maximiliano Marino
-	email = elementh.github@icloud.com
-
-#[color]
-ui = true
-
-#[github]
-#	user = elementh
-
+	email = lucasmmarino@icloud.com
+	signingkey = D11B8801B20921B3
+[color]
+	ui = true
 [help]
 	autocorrect = 10
+[commit]
+	gpgsign = true

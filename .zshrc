@@ -49,9 +49,14 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="vim ~/.zshrc"
 alias github="cd ~/Documents/GitHub"
 alias home="cd ~/"
+
+alias gamemode="xinput set-prop 11 303 0"
+
 alias dotupdate="cp ~/.zshrc ~/Documents/GitHub/dotfiles && cp ~/.gitconfig ~/Documents/GitHub/dotfiles"
 
-alias cassiopeia="ssh cassiopeia -L 5901:localhost:5901"
+alias cassiopeia="ssh cassiopeia -L 5900:localhost:5900 -L 9997:localhost:9997 -D 5000"
+
+alias cassiopeiafs="sshfs lucas@cassiopeia:/home/lucas /home/lucas/cassiopeia -C -o allow_other"
 
 alias installPowerlineFonts="cd ~/ &&
 	git clone https://github.com/powerline/fonts.git powerlinefonts &&
@@ -64,6 +69,10 @@ alias installPacaur="curl -O https://gist.githubusercontent.com/elementh/7433598
 	chmod +x install-pacaur.sh &&
 	./install-pacaur.sh &&
 	rm install-pacaur.sh"
+
+function chpwd() {
+	ls -lh
+}
 
 export TERM="xterm-256color"
 
