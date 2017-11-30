@@ -1,81 +1,76 @@
-export EDITOR=vim
+## START OF FILE ###############################################################
 
-# Path to your oh-my-zsh installation.
-ZSH=/usr/share/oh-my-zsh/
+# Filename:      ~/.zshrc
+# Purpose:       config file for zsh
+# Author:        Lucas Maximiliano Marino <hello@lucasmarino.me>
+# Bug-Reports:   see https://github.com/elementh/dotfiles/issues
+# License:       MIT
 
-# Basic theme
-prompt fade blue
+################################################################################
+#                                                                              #
+# Yo, this is my config, have fun.                                             # 
+# Check my web if you are bored: lucasmarino.me                                #
+#                                                                              #
+################################################################################
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+## ZSTYLE
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+zstyle ':completion:*' insert-unambiguous true
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' menu select=1
+zstyle ':completion:*' original true
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*:manuals' separate-sections true
+zstyle ':completion:*:manuals.*' insert-sections   true
+zstyle ':completion:*' verbose true
+zstyle ':completion:*' rehash true
+setopt menu_complete
 
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+## FUNCTIONS
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
-ZSH_CACHE_DIR=$HOME/.oh-my-zsh-cache
-if [[ ! -d $ZSH_CACHE_DIR ]]; then
-  mkdir $ZSH_CACHE_DIR
-fi
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-
-# Aliases
-
-alias zshconfig="vim ~/.zshrc"
-alias github="cd ~/Documents/GitHub"
-alias home="cd ~/"
-
-alias gamemode="xinput set-prop 11 303 0"
-
-alias dotupdate="cp ~/.zshrc ~/Documents/GitHub/dotfiles && cp ~/.gitconfig ~/Documents/GitHub/dotfiles"
-
-alias cassiopeia="ssh cassiopeia -L 5900:localhost:5900 -L 9997:localhost:9997 -D 5000"
-
-alias cassiopeiafs="sshfs lucas@cassiopeia:/home/lucas /home/lucas/cassiopeia -C -o allow_other"
-
-alias installPowerlineFonts="cd ~/ &&
-	git clone https://github.com/powerline/fonts.git powerlinefonts &&
-	cd powerlinefonts &&
-	./install.sh &&
-	cd .. &&
-	rm -rf powerlinefonts"
-
-alias installPacaur="curl -O https://gist.githubusercontent.com/elementh/7433598ea71be6f4fdd7b2bac4b5c33b/raw/651393f258c41638fad4425473283e1d4e937ba4/install-pacaur.sh &&
-	chmod +x install-pacaur.sh &&
-	./install-pacaur.sh &&
-	rm install-pacaur.sh"
-
+# Works when changing directory
 function chpwd() {
-	ls -lh
+   ls -lah
 }
 
+# Memory overview
+memusage() {
+   ps aux | awk '{if (NR > 1) print $5;
+                  if (NR > 2) print "+"}
+                  END { print "p" }' | dc
+}
+
+# print hex value of a number
+hex() {
+   emulate -L zsh
+   if [[ -n "$1" ]]; then
+       printf "%x\n" $1
+   else
+       print 'Usage: hex <number-to-convert>'
+       return 1
+   fi
+}
+
+# Opens nautilus in the spot
+function nh() {
+  nautilus . &
+}
+
+## ALIAS
+
+alias zshconfig="vim ~/.zshrc"
+alias projects="cd ~/Documents/Projects"
+alias home="cd ~/"
+alias upspeed="iperf3 -c bouygues.iperf.fr -p 5207"
+#alias downspeed="iperf3 -c -R bouygues.iperf.fr -p 5207" TODO:fix this.
+alias installpacaur="curl -O https://gist.githubusercontent.com/elementh/7433598ea71be6f4fdd7b2bac4b5c33b/raw/651393f258c41638fad4425473283e1d4e937ba4/install-pacaur.sh && chmod +x install-pacaur.sh && ./install-pacaur.sh &&	rm install-pacaur.sh"
+
+
+## EXPORTS
+
+export EDITOR=vim
 export TERM="xterm-256color"
+export MOZ_USE_XINPUT2=1
 
-
-
+## END OF FILE #################################################################
 

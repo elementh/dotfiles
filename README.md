@@ -1,7 +1,7 @@
 # dotfiles
 :cyclone: My dotfiles &lt;3
 
-A copy of my dotfiles for zsh and git; they are totally n00b level tho.
+A copy of my dotfiles for zsh and git.
 
 ## License
 
