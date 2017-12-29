@@ -8,3 +8,6 @@
 	autocorrect = 10
 [commit]
 	gpgsign = true
+[remote]
+	push = +refs/heads/*
+	push = +refs/tags/*
