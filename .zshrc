@@ -59,12 +59,10 @@ function nh() {
 ## ALIAS
 
 alias zshconfig="vim ~/.zshrc"
-alias projects="cd ~/Documents/Projects"
+alias projects="cd ~/Projects"
 alias home="cd ~/"
 alias upspeed="iperf3 -c bouygues.iperf.fr -p 5207"
 #alias downspeed="iperf3 -c -R bouygues.iperf.fr -p 5207" TODO:fix this.
-alias installpacaur="curl -O https://gist.githubusercontent.com/elementh/7433598ea71be6f4fdd7b2bac4b5c33b/raw/651393f258c41638fad4425473283e1d4e937ba4/install-pacaur.sh && chmod +x install-pacaur.sh && ./install-pacaur.sh &&	rm install-pacaur.sh"
-
 
 ## EXPORTS
 
@@ -72,5 +70,6 @@ export EDITOR=vim
 export TERM="xterm-256color"
 export MOZ_USE_XINPUT2=1
 
-## END OF FILE #################################################################
+neofetch
 
+## END OF FILE #################################################################
