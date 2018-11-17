@@ -51,6 +51,16 @@ hex() {
    fi
 }
 
+# rgb asciiquarium
+rgbquarium() {
+   asciiquarium | lolcat
+}
+
+# hacking for the lulz
+fbi() {
+   ls -Rlsiua --author --full-time | lolcat
+}
+
 # Opens nautilus in the spot
 function nh() {
   nautilus . &
@@ -70,6 +80,6 @@ export EDITOR=vim
 export TERM="xterm-256color"
 export MOZ_USE_XINPUT2=1
 
-neofetch
+neofetch | lolcat
 
 ## END OF FILE #################################################################
