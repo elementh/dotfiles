@@ -1,13 +1,13 @@
 # dotfiles
 :cyclone: My dotfiles &lt;3
 
-A copy of my dotfiles for zsh and git.
+A copy of my dotfiles for zsh, git, alacritty, and more.
 
 ## License
 
 The MIT License (MIT)
 
-Copyright (c) 2016 <a href="http://lucasmarino.me">Lucas Maximiliano Marino</a>
+Copyright (c) 2021 <a href="http://lucasmarino.me">Lucas Maximiliano Marino</a>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
