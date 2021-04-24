@@ -1,13 +1,13 @@
 [user]
-	name = Lucas Maximiliano Marino
-	email = lucasmmarino@icloud.com
-	signingkey = D72D74FD301EBFF0
+		name = Lucas Maximiliano Marino
+		email = hello@lucasmarino.me
+		signingkey = 40473B976DC424A6
 [color]
-	ui = true
+		ui = true
 [help]
-	autocorrect = 10
+		autocorrect = 10
 [commit]
-	gpgsign = true
+		gpgsign = true
 [remote]
-	push = +refs/heads/*
-	push = +refs/tags/*
+		push = +refs/heads/*
+			push = +refs/tags/*
